@@ -12,7 +12,7 @@ class TasksController < ApplicationController
   end
 
   def create
-       @message = Message.new(message_params)
+       @message = Task.new(message_params)
 
     if @message.save
       flash[:success] = 'Task が正常に作成されました'
@@ -28,7 +28,7 @@ class TasksController < ApplicationController
   end
 
   def update
-      @message = Message.find(params[:id])
+      @message = Task.find(params[:id])
 
     if @message.update(message_params)
       flash[:success] = 'Task は正常に更新されました'
