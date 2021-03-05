@@ -2,7 +2,7 @@
   <h1>タスク一覧</h1>
   
   <% @task.each do |task| %>
-  <p>タスク: <%= link_to  task.content , edit_task_path(task)%></p>
-  <p>ステータス: <%= link_to  task.status , edit_task_path(task)%></p>
+  <li>タスク<%= link_to task.id, task %> : <%= task.content %></li>
+  <li>ステータス<%= link_to task.id, task %> : <%= task.status %></li>
 <% end %>
 <%= link_to '新規タスク作成', new_task_path %>
